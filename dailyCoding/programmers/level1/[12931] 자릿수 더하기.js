@@ -1,7 +1,6 @@
 /**
-  level1
-  연습문제
-/*
+ * level 1
+ */
 
 function solution(n)
 {
