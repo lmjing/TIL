@@ -15,6 +15,11 @@ npm install typescript --save-dev
 # yarn
 # yarn global add typescript
 ```
+3. tsc-watch 설치
+   
+```shell
+npm i -g tsc-watch
+```
 3. 컴파일
 - `package.json` 참고
 ```shell

@@ -4,9 +4,7 @@
   "description": "NomadCoder",
   "main": "index.js",
   "scripts": {
-    "prestart": "tsc --build tscconfig.json",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc-watch --onSuccess \" node dist/index.js\" "
   },
   "author": "",
   "license": "ISC",
