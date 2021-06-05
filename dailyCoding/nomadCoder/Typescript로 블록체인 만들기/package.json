@@ -1,0 +1,16 @@
+{
+  "name": "type-chain",
+  "version": "1.0.0",
+  "description": "NomadCoder",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "tsc --build tscconfig.json",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
