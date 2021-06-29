@@ -188,3 +188,12 @@ methods: {
 3. 모듈, 파일 첨부는 어떻게 통일?
   - mixin 별도로 분리하자니... 양이 적거나 기존 게시판 mixin에서 직접적인 호출이 필요한 부분이 많음
    - 그렇다고 게시판 mixin 내부에 정의하자니, 불필요한데도 data나 methods를 포함하는 경우가 존재
+
+# 결과
+388.15KB -> 320.29 KB
+
+## Before
+![img_1.png](img_1.png)
+
+## After
+![img.png](img.png)
