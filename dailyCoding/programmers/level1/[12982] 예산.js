@@ -4,18 +4,13 @@
  * 시간초과
  */
 function solution(d, budget) {
-    let max = 0;
-    function check(i, cnt, sum) {
-        if (sum >= budget || i >= d.length) {
-            max = Math.max(max, sum > budget ? cnt-1 : cnt);
-            return;
-        }
-        console.log(i, cnt, sum);
-        check(i+1, cnt, sum);
-        check(i+1, cnt+1, sum+d[i]);
+    d.sort();
+    let sum = 0;
+    let i = 0;
+    while (sum <= budget && i < d.length) {
+        sum += d[i++];
     }
-    check(0, 0, 0);
-    return max;
+    return i-1;
 }
 
-solution([1, 3, 2, 5, 4], 9)
+solution([1, 3, 2, 5, 4], 9);
