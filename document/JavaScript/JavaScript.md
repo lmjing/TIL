@@ -108,3 +108,84 @@
   - TypeScript에서는 필요 없다.
 - 사용 목적 : JavaScript가 가지고 있는 Flexible한 특징으로 인해 발생되는 비상식적인 이슈들을 감지하여 에러로 간주해준다.
   - 또한, JS 엔진이 효율적으로 분석할 수 있어 성능 개선까지 기대할 수 있다.
+  
+#Object
+## 1. Literals and property
+```javascript
+const obj = {}; // object literal
+const obj = new Object(); // object contructor
+```
+- key를 명확하게 알고 있을 때 사용
+  
+## 2. computed property
+
+```javascript
+obj['key'] = true;
+```
+- Key로 접근 가능
+- key를 명확히 모르는 경우(ex- property)
+
+## 3. Property value shorthand
+```javascript
+function personObj(name, age) {
+    return {
+        name,
+        age
+    };
+}
+```
+
+## 4. Constructor Function
+```javascript
+const person = new Person('mijeong', 28);
+function Person(name, age) {
+    // this = {};
+    this.name = name;
+    this.age = age;
+    // return this;
+}
+```
+- Function Constructor  정의 시 자동으로 Object 생성해 
+
+## 5. in operator: property existence check (key in obj)
+특정 키가 obj 안에 정의되어 있는지 확인 가능
+```javascript
+console.log('key' in obj); 
+```
+
+## 6. for...in vs for...of
+### for (key in obj)
+```javascript
+for (key in obj) {
+    // obj key 순회
+}
+```
+
+### for (value of iterable)
+```javascript
+for (value of obj) {
+    // obj value 순회
+}
+```
+
+
+## 7. cloning
+```javascript
+const user = { name: 'mijeong', age: 28 };
+const user2 = { age: 38 };
+const user3 = user; // user와 같은 obj 참조
+user.age = 0;
+const user4 = {};
+Object.assign(user4, user2);
+user4.age = 18;
+
+const user5 = {};
+Object.assign(user5, user, user2);
+
+console.log(user3.age) // 0
+console.log(user4.age) // 18
+console.log(user5.age) // 38
+```
+
+Object.assign(dest, [obj1, obj2, obj3...])
+- 뒤에 정의된 Obj property 값으로 덮어씌워짐
