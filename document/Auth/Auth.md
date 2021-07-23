@@ -17,3 +17,4 @@ https://velopert.com/2389
 ## ETC
 - [Vue Auth0](https://auth0.com/blog/complete-guide-to-vue-user-authentication/)\
 - [Authentication vs Authorization](https://auth0.com/intro-to-iam/authentication-vs-authorization/)
+- [java / jjwt library](https://bamdule.tistory.com/123)
