@@ -95,6 +95,29 @@ class Human {
 ```
 ---
 
+# 기타
+## ts check
+TypeScript 2.3부터 유형 주석이 있는 JavaScript 코드를 분석 할 수 있도록 지원
+
+- 사용방법: JS Doc으로 Type을 명시하고 상단에 `@ts-check` 주석을 추가
+
+```javascript
+// @ts-check
+/**
+ * 
+ * @param {number} a 첫번째 숫자
+ * @param {number} b 두번째 숫자
+ * @returns {number}
+ */
+function sum(a, b) {
+    return a + b;
+}
+
+// console.log(sum('10', '20')); // error
+```
+<img width="418" alt="스크린샷 2021-07-25 오후 12 21 12" src="https://user-images.githubusercontent.com/13659732/126886601-51fffa47-9ed2-4822-b715-6605024a3420.png">
+<img width="553" alt="스크린샷 2021-07-25 오후 12 20 53" src="https://user-images.githubusercontent.com/13659732/126886594-07339e2d-f0a8-430a-a0bb-72597d048305.png">
+
 # Reference
 - https://heropy.blog/2020/01/27/typescript/
 - https://joshua1988.github.io/ts/
