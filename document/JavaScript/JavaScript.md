@@ -189,3 +189,120 @@ console.log(user5.age) // 38
 
 Object.assign(dest, [obj1, obj2, obj3...])
 - 뒤에 정의된 Obj property 값으로 덮어씌워짐
+=======
+
+# 데이터타입, data types, let vs var, hoisting
+
+## let vs var
+
+### Var
+- block scope이 없음
+- Hoisting 때문에 위험함(let은 에러를 띄움)
+- 또한, block scope이 없음
+
+### Let
+- mutable type
+  Constant
+- immutable data type
+  - Security (해커들이 새로 할당불가)
+  - Thread safety : mutable type의 경우 여러 쓰레드에 동시에 변경이 일어나 위험할 수 있음
+  - 휴먼 에러 감소
+  
+## Hoisting
+어디에서나 선언했냐와 상관없이 선언을 맨 위로 끌어 올려주는 것
+
+## Variable type
+1. Primitive type: 더이상 나눠질 수 없는 최소 단위
+  * Single item: Number, String, boolean, null, undefined, symbo
+2. Object type : single item의 box container
+3. Function: first-class function 지원
+  * 변수 할당 가능
+  * 파라미터 전달 가능
+  * 리턴 가능
+
+### Number: 숫자 타입 전체
+- infinity: 양수/0
+- NegativeInfinity: 음수/0
+- NaN: 숫자가 아님
+- bigint: 숫자 끝에 n을 붙이면 더 큰 범위에 숫자를 쓸 수 있음(단, 모든 브라우저에서 지원X)
+
+### String: 문자열
+- Template literals
+
+### Symbol
+모든 값은 고유함 symbol(1) != symbol(1)
+같은 값으로 지정하고 싶을 경우 symbol.for()
+내부 값 String 변환 = symbol.description
+
+### Dynamic typing
+할당된 값에 따라 변수 타입이 변경될 수 있음
+런타임에서 타입이 결정됨
+
+# 코딩의 기본 operator, if, for loop
+
+# 함수의 선언과 표현
+
+# 클래스
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+- ES6 부터 추가됨
+- syntactical sugar over prototype-based inheritance
+
+## getter & setter
+```javascript
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    get age() {
+        return this._age;
+    }
+    set age(value) {
+        this._age = value > 0 ? value : 0;
+    }
+}
+const user = new User('mijeong', -1);
+console.log(user.age); // 0
+```
+- `getter`와 `setter`내에서 변수를 정의할 때는 구분자를 넣어 반복 호출을 방지
+- 캡슐화를 이용해 잘못된 값을 정의/조회 하는 것을 방지함
+
+## Fields (private, public)
+```javascript
+class Experiment {
+    publicField = 2;
+    #privateField = 3;
+}
+const experiment = new Experiment();
+console.log(experiment.publicField); // 2
+console.log(experiment.privateField); // undefined
+```
+private class fields: `#`을 앞에 붙여 정의
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/Private_class_fields
+- ES2019 부터 지원 (IE 지원 X)
+
+## static properties and methods
+```javascript
+class Article {
+    static publisher = 'mijeong';
+    constructor(articleNumber) {
+        this.articleNumber = articleNumber;
+    }
+    
+    static printPublisher() {
+        console.log(Article.publisher);
+    }
+}
+const article = new Article(1);
+console.log(article.publisher) // undefined
+console.log(Article.publisher) // mijeong
+```
+- 클래스 자체에 공통적으로 범용적으로 쓰이는 기능의 경우 static으로 선언하여 메모리를 줄일 수 있음
+- `static` 정적 프로퍼티 or 메소드는 object(instance)가 아닌 class 자체에 정의되어 있음
+  - 따라서, object에서 접근 시 `undefined` 표시됨
+  
+## 상속과 다형성
+- `extends`로 class 상속
+- 필요한 함수는 `override` 가능
+  - `super.${methodName}` 호출 시 부모 클래스의 함수 내용 실행됨
