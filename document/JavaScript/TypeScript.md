@@ -9,13 +9,14 @@
   - object에 명시되지 않은 property를 사용하는 경우 에러 발생
 - VScode 및 Webstorm은 타입스크립트 지원 기능이 내장되어 있기 때문에 별도의 설정 없이도 타입스크립트 파일을(.ts, tsconfig.json 등) 인식할 수 있고 코드 검사, 빠른 수정, 실행 및 디버깅 등의 다양한 기능을 바로 사용할 수 있습니다.
 
+## Playground
+[플레이그라운드 사이트](https://www.typescriptlang.org/play)에서 typeScript <-> JavaScript 자동 변환되는 것을 확인할 수 있음
 ---
+# Setting TypeScript Up
+## tsconfig.json
+TypeScript에게 어떻게 JavaScript 변환하는지 옵션 정의하는 용도
+- [타입스크립트 설정 파일 옵션(문서)](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
 
-# TypeScript 학습
-
-## Setting TypeScript Up
-### tsconfig.json
-- TypeScript에게 어떻게 JavaScript 변환하는지 옵션 정의하는 용도
 ```json
 {
   "compilerOptions": {
@@ -44,9 +45,9 @@
 tsc
 ```
 
-## First steps with Typescript
+# First steps with Typescript
 - `export {}`를 선언하여 모듈이라고 정의 필요
-### 특징
+## 특징
 - 함수의 누락된 매개변수 안내
 ![img.png](img.png)
 - 함수의 타입 안내
@@ -67,7 +68,7 @@ tsc
   - 결과 (JS)
     ![img_7.png](img_7.png)
 
-### 문법
+## 문법
 - Optional 선언 : `{변수}?`
 - Type 선언 : `{변수 or 함수}:{Type}`
 - Interface: Object의 타입 정의 가능
