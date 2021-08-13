@@ -3,3 +3,52 @@
 dailyCoding/.idea/
 dailyCoding/nomadCoder/Typescript로 블록체인 만들기/dist
 
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
+
+
+### react ###
+projects/tic-tac-toe/.DS_*
+projects/tic-tac-toe/*.log
+projects/tic-tac-toe/logs
+projects/tic-tac-toe/**/*.backup.*
+projects/tic-tac-toe/**/*.back.*
+
+projects/tic-tac-toe/node_modules
+projects/tic-tac-toe/bower_components
+
+projects/tic-tac-toe/*.sublime*
+
+projects/tic-tac-toe/.pnp
+projects/tic-tac-toe/.pnp.js
+
+# testing
+projects/tic-tac-toe/coverage
+
+# production
+projects/tic-tac-toe/build
+
+# misc
+projects/tic-tac-toe/.env.local
+projects/tic-tac-toe/.env.development.local
+projects/tic-tac-toe/.env.test.local
+projects/tic-tac-toe/.env.production.local
+
+
+# End of https://www.toptal.com/developers/gitignore/api/react
