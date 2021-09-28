@@ -6,10 +6,11 @@
 function solution(n) {
     let primeCheck = Array(n + 1); // 1이면 소수 아님. 값 없어야 소수
     let count = 0;
-    for(let i=2; i<=n; i++) {
-        if(!primeCheck[i]) { // 소수임
+    for (let i = 2; i <= n; i++) {
+        if (!primeCheck[i]) { // 소수임
             count++;
-            for(let j=i*i; j<=n; j+=i) {
+            primeCheck[i] = 1;
+            for (let j = i * i; j <= n; j += i) {
                 primeCheck[j] = 1; // 배수들을 지움
             }
         }
