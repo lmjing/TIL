@@ -1,3 +1,6 @@
+/*
+86491번 제출코드는 아래로됨
+ */
 function solution(sizes) {
     return sizes.reduce(([mh, mv], [a, b]) => [Math.max(mh, Math.min(a, b)), Math.max(mv, Math.max(a, b))], [0, 0]).reduce((_, $) => _ * $)
 }
