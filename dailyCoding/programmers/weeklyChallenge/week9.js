@@ -38,8 +38,7 @@ function solution(n, wires) {
 
         updateDiff(v1, v2) {
             const v1Count = this.getCount(v1, v2);
-            const v2Count = this.getCount(v2, v1);
-            const diff = Math.abs(v1Count - v2Count);
+            const diff = Math.abs(v1Count * 2 - n); // v1Count - (n - v1Count)
             this.min = Math.min(this.min, diff);
         }
     }
