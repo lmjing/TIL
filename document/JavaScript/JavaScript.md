@@ -1,7 +1,5 @@
 # JavaScript
 
-> 드림코딩 by 엘리 JavaScript 기반 내용 정리
-
 # Script async vs defer
 
 ## html에서 js script를 호출하는 보편적인 방법
@@ -306,3 +304,52 @@ console.log(Article.publisher) // mijeong
 - `extends`로 class 상속
 - 필요한 함수는 `override` 가능
   - `super.${methodName}` 호출 시 부모 클래스의 함수 내용 실행됨
+
+-----
+
+## 함수와 일급객체
+### 일급 객체
+아래 조건을 만족하는 객체
+1. 무명의 리터럴로 생성 가능 (런타임(할당단계)에 함수 리터럴이 평가되어 함수 객체가 생성되고 변수에 할당된다.)
+2. 변수나 자료구조(객체, 배열 등)에 저장 가능
+3. 함수의 매개변수로 전달 가능
+4. 함수의 반환 값으로 사용 가능
+
+### 함수(객체)의 프로퍼티
+> - `console.dir(함수명)`으로 조회 가능
+> - `__proto__`는 함수 객체의 고유 프로퍼티가 아니다.
+  -> 접근자 프로퍼티로 `Object.prototype` 객체의 프로퍼티를 상속 받은 것
+  
+  
+ 
+`argumets`, `caller`, `length`, `name`, `prototype`
+
+
+  
+1. `argumets`: 함수 호출 시 전달된 인수들의 정보를 담고 있는 iterable 유사 배열 객체
+    - 가변인자함수 구현 시 유용
+    - ES6에서 Rest 파라미터로 배열 객체로 접근 가능 (원래 유사 배열 객체라 별도 변환 필요)
+      ```
+      function name(...args) {}
+      ```
+
+2. `caller`: 함수 자신을 호출한 함수를 가르킴
+
+3. `length`: 함수 정의시 선언한 매개변수의 개수
+    - 유의: `arguments`(인수)의 개수와 같이 않음
+
+4. `name`: 함수의 이름을 나타냄
+    - 함수 이름이 아닌 객체를 가르키는 식별자로 호출
+        ```
+        var nameFunc = function identifier() {}; 
+        console.log(nameFunc.name); // identifier
+        ```
+    - 익명 함수 표현식의 경우 ES5에서는 빈 문자열/ES6에서는 함수 이름을 가짐
+
+5. `__proto__`: [[prototype]] 접근자 프로퍼티
+    - 모든 객체는 [[prototype]] 내부 슬롯을 가짐 (직접 접근 불가)
+    - `__proto__` 접근자 프로퍼티를 통해 간접적으로 [[prototype]]이 가르키는 프로토타입 객체에 접근 가능
+    - `__proto__`는 함수 객체의 고유 프로퍼티가 아니다. `Object.prototype` 객체의 프로퍼티를 상속 받은 것
+    
+7. `prototype`: constructor만이 소유하는 프로퍼티
+    - 생성자 함수로 호출될 때 생성할 인스턴스의 프로토타입 객체를 가르킴
