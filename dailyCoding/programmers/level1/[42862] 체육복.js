@@ -1,8 +1,14 @@
 function solution(n, lost, reserve) {
-    let answer = n - lost.length;
-    
-    const lSorted = lost.sort((a,b) => a-b);
+    const lSorted = lost.filter(_ => {
+        const i = reserve.indexOf(_)
+        if (i >= 0) {
+            reserve.splice(i, 1);
+            return false;
+        } else return true;
+    }).sort((a,b) => a-b);
     const rSorted = reserve.sort((a,b) => a-b);
+    
+    let answer = n - lSorted.length;
     
     for(const l of lSorted) {
         if (reserve.length <= 0) break;
