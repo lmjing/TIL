@@ -18,3 +18,14 @@
   - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): git commit 내역에 대한 정보를 쉽게 확인 가능
 8. 기타
    - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager): project 즐겨찾기, switch 가능
+
+------
+
+## 에러 로그 시스템
+### Sentry
+- JavaScript 에러 확인 및 슬랙/텔레그램 등 연동하여 로그 정보를 쉽게 받아볼 수 있음
+- 오프라인에서도 작동
+- 동일한 에러가 많이 발생할 경우 조치하기 용이
+
+- 적용기: https://urbanbase.github.io/dev/2021/03/04/Sentry.html
+- [자바스크립트 센트리는 어떻게 동작할까?](https://blog.hyeonsulee.com/how-does-sentry-work-in-javascript)
